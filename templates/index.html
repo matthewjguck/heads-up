@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Heads Up</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=lexend">
+<style>
+    body {
+        font-family: "Lexend", sans-serif;
+        color: white;
+        margin: 0;
+        padding: 0;
+        background-color: #3e4456ff;
+    }
+
+    .container {
+        display: flex;
+        justify-content: space-between;
+        padding: 20px;
+    }
+
+    .left-side, .right-side {
+        padding: 10px;
+        box-sizing: border-box;
+    }
+
+    .left-side {
+        width: calc(67% - 10px);
+    }
+
+    .right-side {
+        width: calc(33% - 10px);
+    }
+
+    .heading {
+        font-size: 50px;
+        font-weight: bold;
+        padding-left: 30px;
+        padding-top: 20px;
+    }
+
+    .schedules {
+        display: flex;
+        border: 1px solid #ccc;
+        padding: 15px;
+        padding-top: 0px;
+    }
+
+    .schedule-column {
+        flex: 1;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .to-do-container {
+        border-radius: 12px;
+        background-color: #5b6276ff;
+        height: calc(90vh);
+    }
+
+    .todo-item {
+        margin-bottom: 10px;
+    }
+
+    .top {
+        height: calc(40vh);
+        border-radius: 12px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }  
+    
+    .bottom {
+        height: calc(40vh);
+        margin-top: 9vh;
+        border-radius: 12px;
+        background-color: #5b6276ff;
+    }
+
+    .welcome, .stats {
+        text-align: left;
+        margin-left: 40px;
+    }
+
+    .welcome {
+        font-weight: 600;
+        font-size: 80px;
+        margin-bottom: 20px;
+    }
+
+    .stats {
+        font-weight: lighter;
+        font-size: 20px;
+    }
+
+    .temperature {
+        font-size: 40px;
+        font-weight: bold;
+    }
+
+    .schedule-case {
+        margin: 0;
+    }
+
+    .schedule-heading {
+        padding-top: 20px;
+        padding-bottom: 20px;
+        font-weight: bold;
+        font-size: 25px;
+    }
+
+    .schedule-item {
+        border-radius: 8px;
+        background-color: #b2bbd0ff;
+        height: 60px;
+
+    }
+
+</style>
+</head>
+<body>
+    <div class="container">
+        <div class="left-side">
+            <div class="top">
+                <div class="welcome">
+                    Hi, Matthew.
+                </div>
+                <div class="stats">
+                    <div class="date">
+                        Monday, March 25
+                    </div>
+                    <div class="temperature">
+                        58 ºF
+                    </div>
+                </div>
+            </div>
+
+            <div class="bottom">
+                <div class="schedule-case">
+                    <div class="schedules">
+                        <div class="schedule-column">
+                            <div class="schedule-heading">Today</div>
+                            <!-- Add today's schedule items here -->
+                            <div class="schedule-item">
+                                <div class="event-title">
+                                    {title}
+                                </div>
+                                <div class="event-time">
+                                    {time}
+                                </div>
+                                <div class="event-location">
+                                    {location}
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="schedule-column">
+                            <div class="schedule-heading">Tomorrow</div>
+                            <!-- Add tomorrow's schedule items here -->
+                            <div class="schedule-item">Schedule 3</div>
+                            <div class="schedule-item">Schedule 4</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="right-side">
+            <div class="to-do-container">
+                <div class="heading">To-do</div>
+                <div class="todo">
+                    <div class="todo-item">To-do 1</div>
+                    <div class="todo-item">To-do 2</div>
+                    <div class="todo-item">To-do 3</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
