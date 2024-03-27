@@ -1,5 +1,5 @@
-![SLATT (3)](https://github.com/matthewjguck/heads-up/assets/160309784/1c923063-dd6c-47d4-beec-31acfa9f04a8)
 
+![Heads Up (2)](https://github.com/matthewjguck/heads-up/assets/160309784/cbc8b329-84ed-4464-a816-84e57d3e7727)
 ### [WIP] 
 
 "<i>Heads Up</i>" displays your upcoming events and to-do list, importing them directly from your Outlook or Google Account. 
