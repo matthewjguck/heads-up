@@ -8,6 +8,7 @@
 <style>
     body {
         font-family: "Lexend", sans-serif;
+        font-weight: bold;
         color: white;
         margin: 0;
         padding: 0;
@@ -114,7 +115,15 @@
         border-radius: 8px;
         background-color: #b2bbd0ff;
         height: 60px;
+        margin-bottom: 10px;
+        padding-left: 10px;
+        padding-top: 10px;
 
+    }
+
+    .time-place {
+        display: flex;
+        font-weight: normal;
     }
 
 </style>
@@ -146,11 +155,13 @@
                                 <div class="event-title">
                                     {title}
                                 </div>
-                                <div class="event-time">
-                                    {time}
-                                </div>
-                                <div class="event-location">
-                                    {location}
+                                <div class="time-place">
+                                    <div class="event-time">
+                                        {time} 
+                                    </div>
+                                    <div class="event-location">
+                                        @ {location}
+                                    </div>
                                 </div>
                             </div>
 
@@ -177,4 +188,42 @@
         </div>
     </div>
 </body>
+
+<script>
+    function getCalendarEvents(token) {
+    const headers = new Headers();
+    headers.append("Authorization", `Bearer ${token}`);
+
+    const options = {
+        method: "GET",
+        headers: headers
+    };
+
+    // Adjust the endpoint URL as necessary. For example, to specify a time range.
+    const graphEndpoint = "https://graph.microsoft.com/v1.0/me/calendar/events";
+
+    fetch(graphEndpoint, options)
+        .then(response => response.json())
+        .then(data => {
+            console.log(data);
+            // Here you can process and display the calendar events as needed.
+            displayEvents(data.value); // Implement this function based on how you want to display the events.
+        })
+        .catch(error => {
+            console.error("Error fetching calendar events:", error);
+        });
+}
+
+// Example function to display events - implement according to your needs
+function displayEvents(events) {
+    events.forEach(event => {
+        // For example, assuming you have a div with an ID of 'calendarEvents'
+        const eventElement = document.createElement("p");
+        eventElement.textContent = `${event.subject} - ${event.start.dateTime} to ${event.end.dateTime}`;
+        document.getElementById("calendarEvents").appendChild(eventElement);
+    });
+}
+
+</script>
+
 </html>
